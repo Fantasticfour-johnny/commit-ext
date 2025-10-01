@@ -15,7 +15,10 @@ app.add_middleware(
 )
 
 # 🔐 Store your API key securely (never put in client)
-API_KEY = os.getenv("A4F_API_KEY", "your_api_key_here")
+API_KEY = os.getenv("A4F_API_KEY")  # ✅ Secure
+if not API_KEY:
+    raise ValueError("A4F_API_KEY environment variable is required")
+
 BASE_URL = "https://api.a4f.co/v1"
 
 # ============================
