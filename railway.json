@@ -1,0 +1,8 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "uvicorn fastapi_commit_proxy:app --host 0.0.0.0 --port $PORT"
+  }
+}
